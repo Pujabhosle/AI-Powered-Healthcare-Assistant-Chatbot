@@ -1,0 +1,29 @@
+import streamlit as st
+from transformers import pipeline
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+
+nltk.download('punkt")
+nltk.download('stopwords")
+
+chatbot = pipeline("question-answering", model-"deepset/bert-base-cased-squad2")
+def preprocess_input(user_input):
+    stop words set(stopwords.words('english'))
+    words word_tokenize(user_input)
+    filtered_words= [word for word in words if word.lower() not in stop_words]
+    return' '.join(filtered_words)
+
+def healthcare_chatbot(user_input):
+    user input preprocess_input(user_input).lower()
+
+    if "sneeze" in user_input or "sneezing" in user_input:
+
+        return "Frequent sneezing may indicate allergies or a cold. Consult a doctor if symptoms persist."
+
+    elif "sympton" in user_input:
+
+        return "It seems like you're experiencing symptoms. Please consult a doctor for accurate advice."
+
+    elif "appointment" in user Input:
+
